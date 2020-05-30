@@ -3,8 +3,8 @@ import emoji
 
 city = input("Enter your city: ")
 
-fahren= f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid=c42dd798a4d6392b9c32fdf90cb431c8&units=imperial'
-celcius= f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid=c42dd798a4d6392b9c32fdf90cb431c8&units=metric'
+fahren= f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid= &units=imperial'
+celcius= f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid= &units=metric'
 
 def request(url):
     res= requests.get(url)
@@ -34,6 +34,6 @@ elif f == "Snow":
 elif f == "Thunder":
     print(emoji.emojize(":zap:"))
 
-print(f'Temperature in Kelvin = {request(celcius)+273}')
-print(f'Temperature in Fahrenheight = {request(fahren)}')
-print(f'Temperature in Celcius = {request(celcius)}')
+print(f'Temperature in Kelvin = {request(celcius)+273}K')
+print(f'Temperature in Fahrenheight = {request(fahren)}\N{DEGREE SIGN}F')
+print(f'Temperature in Celcius = {request(celcius)}\N{DEGREE SIGN}C')
